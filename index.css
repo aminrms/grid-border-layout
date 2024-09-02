@@ -1,0 +1,177 @@
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* Default 1 column for xs */
+  gap: 0; /* No gap between grid items */
+}
+
+.product-card {
+  padding: 16px;
+  border: 0.2px solid #ccc;
+  box-sizing: border-box;
+  height: 150px;
+}
+
+/* Extra Small screens (xs) - 1 column */
+@media screen and (min-width: 0px) and (max-width: 575px) {
+  .product-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .product-card {
+    border-left: none;
+    border-top: none;
+  }
+  .product-card {
+    border-left: none;
+    border-right: none;
+  }
+
+  .product-card:first-child {
+    border-top: none;
+  }
+
+  .product-card:last-child {
+    border-bottom: none;
+  }
+  .product-card:last-child {
+    border-right: none;
+  }
+}
+
+/* Small screens (sm) - 2 columns */
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .product-card {
+    border-left: none;
+    border-top: none;
+  }
+  .product-card:nth-child(odd) {
+    border-left: none;
+  }
+
+  .product-card:nth-child(even) {
+    border-right: none;
+  }
+
+  .product-card:nth-child(-n + 2) {
+    border-top: none;
+  }
+
+  .product-card:nth-last-child(-n + 2):nth-child(2n + 1) {
+    border-bottom: none;
+  }
+  .product-card:last-child {
+    border-right: none;
+  }
+}
+
+/* Medium screens (md) - 3 columns */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .product-card {
+    border-left: none;
+    border-top: none;
+  }
+  /* Remove left border for the first column */
+  .product-card:nth-child(3n + 1) {
+    border-left: none;
+  }
+
+  /* Remove right border for the last column */
+  .product-card:nth-child(3n) {
+    border-right: none;
+  }
+
+  /* Remove top border for the first row */
+  .product-card:nth-child(-n + 3) {
+    border-top: none;
+  }
+  /* Remove bottom border for the last row */
+  .product-card:nth-last-child(-n + 3):nth-child(3n + 2),
+  .product-card:nth-last-child(-n + 3):nth-child(3n + 1) {
+    border-bottom: none;
+    border-top: none;
+  }
+  .product-card:last-child {
+    border-right: none;
+  }
+}
+
+/* Large screens (lg) - 4 columns */
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .product-card {
+    border-left: none;
+    border-top: none;
+  }
+  /* Remove left border for the first column */
+  .product-card:nth-child(4n + 1) {
+    border-left: none;
+  }
+
+  /* Remove right border for the last column */
+  .product-card:nth-child(4n) {
+    border-right: none;
+  }
+
+  /* Remove top border for the first row */
+  .product-card:nth-child(-n + 4) {
+    border-top: none;
+  }
+
+  /* Select the last row and remove the bottom border */
+  .product-card {
+    border-bottom: 1px solid #ccc; /* Default bottom border */
+  }
+  .product-card:nth-last-child(-n + 4):nth-child(4n + 3),
+  .product-card:nth-last-child(-n + 4):nth-child(4n + 2),
+  .product-card:nth-last-child(-n + 4):nth-child(4n + 1) {
+    border-bottom: none; /* Remove bottom border for the last row */
+  }
+  .product-card:last-child {
+    border-right: none;
+  }
+}
+
+/* Extra Large screens (xl) - Also 4 columns */
+@media screen and (min-width: 1200px) {
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .product-card {
+    border-left: none;
+    border-top: none;
+  }
+  /* Remove left border for the first column */
+  .product-card:nth-child(4n + 1) {
+    border-left: none;
+  }
+
+  /* Remove right border for the last column */
+  .product-card:nth-child(4n) {
+    border-right: none;
+  }
+
+  /* Remove top border for the first row */
+  .product-card:nth-child(-n + 4) {
+    border-top: none;
+  }
+
+  /* Select the last row and remove the bottom border */
+  .product-card {
+    border-bottom: 1px solid #ccc; /* Default bottom border */
+  }
+  .product-card:nth-last-child(-n + 4):nth-child(4n + 3),
+  .product-card:nth-last-child(-n + 4):nth-child(4n + 2),
+  .product-card:nth-last-child(-n + 4):nth-child(4n + 1) {
+    border-bottom: none; /* Remove bottom border for the last row */
+  }
+  .product-card:last-child {
+    border-right: none;
+  }
+}
